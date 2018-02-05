@@ -6,6 +6,6 @@ import beans.Epreuve;
 
 public interface GestionEpreuve {
 
-	public List<Epreuve> listeEpreuve();
+	public List<Epreuve> listeEpreuve(int idUtilisateur);
 	
 }

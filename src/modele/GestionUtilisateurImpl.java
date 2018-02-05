@@ -1,11 +1,8 @@
 package modele;
 
-import java.util.List;
+import java.sql.SQLException;
 
-import beans.Epreuve;
 import beans.Utilisateur;
-import dao.EpreuveDAO;
-import dao.EpreuveDAOImpl;
 import dao.UtilisateurDAO;
 import dao.UtilisateurDAOImpl;
 
@@ -21,12 +18,20 @@ public class GestionUtilisateurImpl implements GestionUtilisateur{
 	}
 
 	public Utilisateur connecterUtilisateur(String email, String password){
-		String erreur = "";
+		// String erreur = "";
+		Utilisateur u = new Utilisateur();
 		
 		//Verif champs vide
 		UtilisateurDAO udao = UtilisateurDAOImpl.getInstance();
 		
-		return udao.connecterUtilisateur(email, password);
+		try {
+			u = udao.connecterUtilisateur(email, password);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return u;
 	}
 
 	

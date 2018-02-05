@@ -1,5 +1,7 @@
 package modele;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import beans.Epreuve;
@@ -19,7 +21,15 @@ public class GestionEpreuveImpl implements GestionEpreuve {
 
 	@Override
 	public List<Epreuve> listeEpreuve() {
+		List<Epreuve> lesEpreuves = new ArrayList<Epreuve>();
 		EpreuveDAO edao = EpreuveDAOImpl.getInstance();
-		return edao.listeEpreuves();
+		try {
+			lesEpreuves = edao.listeEpreuves();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return lesEpreuves;
 	}
 }

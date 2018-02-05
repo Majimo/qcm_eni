@@ -1,12 +1,10 @@
 package beans;
 
-import java.util.Date;
-
 public class Epreuve {
 	
 	private int idEpreuve;
-	private Date dateDebutValidite;
-	private Date dateFinValidite;
+	private double dateDebutValidite;
+	private double dateFinValidite;
 	private int tempsEcoule;
 	private String etat;
 	private float noteObtenue;
@@ -18,7 +16,7 @@ public class Epreuve {
 		
 	}
 
-	public Epreuve(int idEpreuve, Date dateDebutValidite, Date dateFinValidite, int tempsEcoule, String etat,
+	public Epreuve(int idEpreuve, double dateDebutValidite, double dateFinValidite, int tempsEcoule, String etat,
 			float noteObtenue, String niveauObtenu, int idTest, int idUtilisateur) {
 		super();
 		this.idEpreuve = idEpreuve;
@@ -40,19 +38,19 @@ public class Epreuve {
 		this.idEpreuve = idEpreuve;
 	}
 
-	public Date getDateDebutValidite() {
+	public double getDateDebutValidite() {
 		return dateDebutValidite;
 	}
 
-	public void setDateDebutValidite(Date dateDebutValidite) {
+	public void setDateDebutValidite(double dateDebutValidite) {
 		this.dateDebutValidite = dateDebutValidite;
 	}
 
-	public Date getDateFinValidite() {
+	public double getDateFinValidite() {
 		return dateFinValidite;
 	}
 
-	public void setDateFinValidite(Date dateFinValidite) {
+	public void setDateFinValidite(double dateFinValidite) {
 		this.dateFinValidite = dateFinValidite;
 	}
 

@@ -12,11 +12,21 @@
   </resource-ref>
   
   <servlet>
-  	<servlet-name>ConnexionUtilisateur</servlet-name>
-  	<servlet-class>servlets.ConnexionUtilisateur</servlet-class>
+    <servlet-name>ConnexionUtilisateur</servlet-name>
+    <servlet-class>servlets.ConnexionUtilisateur</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ConnexionUtilisateur</servlet-name>
-  	<url-pattern>/connexion</url-pattern>
+    <servlet-name>ConnexionUtilisateur</servlet-name>
+    <url-pattern>/connexion</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>SelectionEpreuve</servlet-name>
+    <servlet-class>servlets.SelectionEpreuve</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SelectionEpreuve</servlet-name>
+    <url-pattern>/selectionEpreuve</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

@@ -1,0 +1,16 @@
+@CHARSET "ISO-8859-1";
+
+/********* AUTHENTIFICATION *************/
+h2 {
+	text-align: center;
+	
+}
+
+.form-row{
+	margin-top: 30px;
+}
+
+hr{
+width: 800px;
+height: 20px;
+}

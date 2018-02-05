@@ -1,6 +1,13 @@
 package modele;
 
+import java.util.List;
+
+import beans.Epreuve;
 import beans.Utilisateur;
+import dao.EpreuveDAO;
+import dao.EpreuveDAOImpl;
+import dao.UtilisateurDAO;
+import dao.UtilisateurDAOImpl;
 
 public class GestionUtilisateurImpl implements GestionUtilisateur{
 	
@@ -17,18 +24,11 @@ public class GestionUtilisateurImpl implements GestionUtilisateur{
 		String erreur = "";
 		
 		//Verif champs vide
-		if (email.equals("")){
-			erreur = "Email obligatoire";
-		}
-		else if (password.equals("")) {
-			erreur = "Mot de passe obligatoire";
-		}
-		else{
+		UtilisateurDAO udao = UtilisateurDAOImpl.getInstance();
 		
-			UtilisateurDAO udao = new UtilisateurDAO();
-			
-			return udao.connecterUtilisateur(email, password);
-		}
+		return udao.connecterUtilisateur(email, password);
 	}
+
+	
 	
 }

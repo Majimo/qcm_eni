@@ -6,8 +6,20 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import beans.Utilisateur;
+import modele.GestionUtilisateur;
+import modele.GestionUtilisateurImpl;
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
+	
+	private static UtilisateurDAO instance = null;
+	
+	public static UtilisateurDAO getInstance(){
+		if (instance == null){
+			instance = new UtilisateurDAOImpl();
+		}
+		return instance;
+	}
+	
 	/*
 	 * Recherche par login et mot de passe
 	 */

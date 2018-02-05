@@ -10,7 +10,16 @@ import java.util.Date;
 import beans.Epreuve;
 
 public class EpreuveDAOImpl implements EpreuveDAO{
-
+	
+	private static EpreuveDAO instance = null;
+	
+	public static EpreuveDAO getInstance(){
+		if (instance == null){
+			instance = new EpreuveDAOImpl();
+		}
+		return instance;
+	}
+	
 	@Override
 	public ArrayList<Epreuve> listeEpreuves() throws SQLException {
 		Connection cnx=null;

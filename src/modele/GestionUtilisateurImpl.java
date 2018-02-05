@@ -1,10 +1,12 @@
 package modele;
 
+import beans.Utilisateur;
+
 public class GestionUtilisateurImpl implements GestionUtilisateur{
 	
 	private static GestionUtilisateur instance = null;
 	
-	public GestionUtilisateur getInstance(){
+	public static GestionUtilisateur getInstance(){
 		if (instance == null){
 			instance = new GestionUtilisateurImpl();
 		}

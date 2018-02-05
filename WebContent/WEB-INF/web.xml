@@ -9,11 +9,19 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <resource-ref>
-		<description>Pool de connexion vers la base</description>
-		<res-ref-name>jdbc/dsTPWeb</res-ref-name>
-		<res-type>javax.sql.DataSource</res-type>
-		<res-auth>Container</res-auth>
-	</resource-ref>
+    <description>Pool de connexion vers la base</description>
+    <res-ref-name>jdbc/dsTPWeb</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
+  
+  <servlet>
+  	<servlet-name>ConnexionUtilisateur</servlet-name>
+  	<servlet-class>servlets.ConnexionUtilisateur</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>ConnexionUtilisateur</servlet-name>
+  	<url-pattern>/connexion</url-pattern>
+  </servlet-mapping>
 </web-app>

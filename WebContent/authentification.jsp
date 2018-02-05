@@ -18,7 +18,7 @@
 	<hr style="border: 1px solid grey; margin-top: 30px;">
 	
 	<!-- FORMULAIRE D'AUTHENTIFICATION -->
-	<form method="post" action="/connexion">
+	<form method="post" action="connexion">
 		<div class="form-row">
 			<div class="form-group col-md-6">
 				<label>Email</label> <input type="text" name="email" class="form-control"

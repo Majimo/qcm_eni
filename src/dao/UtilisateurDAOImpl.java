@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import beans.Utilisateur;
-import modele.GestionUtilisateur;
-import modele.GestionUtilisateurImpl;
 
 public class UtilisateurDAOImpl implements UtilisateurDAO {
 	
@@ -30,18 +28,18 @@ public class UtilisateurDAOImpl implements UtilisateurDAO {
 		Utilisateur utilisateur=null;
 		try{
 			cnx = AccesBase.getConnection();
-			rqt = cnx.prepareStatement("select idUser, nom, prenom, email, password from UTILISATEUR where email=? and motdepasse=?");
+			rqt = cnx.prepareStatement("select idUtilisateur, nom, prenom, email, password from UTILISATEUR where email=? and password=?");
 			rqt.setString(1, email);
 			rqt.setString(2, password);
 			rs=rqt.executeQuery();
 			// SI on trouve au moins 1 résultat, on prend le 1er pour mettre à jour les informations du candidat utilisé pour la recherche.
 			if (rs.next()){
 				utilisateur = new Utilisateur();
-				utilisateur.setIdUtilisateur(rs.getInt("idUser"));
+				utilisateur.setIdUtilisateur(rs.getInt("idUtilisateur"));
 				utilisateur.setNom(rs.getString("nom"));
 				utilisateur.setPrenom(rs.getString("prenom"));
 				utilisateur.setEmail(rs.getString("email"));
-				utilisateur.setPassword(rs.getString("motdepasse"));
+				utilisateur.setPassword(rs.getString("password"));
 			}
 			// ...sinon on renvoie null
 			else {

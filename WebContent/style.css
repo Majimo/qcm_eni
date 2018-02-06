@@ -3,14 +3,19 @@
 /********* AUTHENTIFICATION *************/
 h2 {
 	text-align: center;
-	
 }
 
-.form-row{
+.form-row {
 	margin-top: 30px;
 }
 
-hr{
-width: 800px;
-height: 20px;
+hr {
+	width: 800px;
+	height: 20px;
+}
+
+/********** TEST ***************/
+hr #trait3{
+	border: 1px solid grey; 
+	width: 47rem;
 }

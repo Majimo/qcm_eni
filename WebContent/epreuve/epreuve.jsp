@@ -26,7 +26,7 @@
 		</div>
 
 		<div class="form-group col-md-6" style="margin-left: 8rem;">
-			<form method="post" action="question">
+			<form method="post" action="selectionEpreuve">
 				<div class="form-row" style="margin-top: 1rem; margin-left: 5rem;">
 					<select class="form-control" id="listeTests" name="listeTests"
 						style="width: 50%;">

@@ -7,32 +7,26 @@
 <link rel="stylesheet" href="style.css"/>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-	crossorigin="anonymous">
-
+	rel="stylesheet">
+	
 <title>Authentification</title>
 </head>
-<body>
-	<h2>Formulaire d'authentification pour l'accès aux tests</h2>
-	<hr style="border: 1px solid grey; margin-top: 30px;">
-	
+<body>	
+  	
 	<!-- FORMULAIRE D'AUTHENTIFICATION -->
-	<form method="post" action="connexion">
-		<div class="form-row">
-			<div class="form-group col-md-6">
-				<label>Email</label> <input type="text" name="email" class="form-control"
-					value="" width="30" />
-			</div>
-			<div class="form-group col-md-6">
-				<label>Password</label> <input type="password" name="password"
-					class="form-control" value="" width="30"/>
-			</div>
-		</div>
-		<div>
-			<input type="submit" class="btn btn-primary" name="ok" value="Valider" />
-		</div>
-	</form>
+	<div class = "container">
+	<div class="wrapper">
+		<form method="post" action="connexion" name="Login_Form" class="form-signin">       
+		    <h3 class="form-signin-heading">Connection</h3>
+			  <hr class="colorgraph"><br>
+			  
+			  <input type="text" class="form-control" name="email" placeholder="Email" required="" autofocus="" />
+			  <input type="password" class="form-control" name="password" placeholder="Password" required=""/>     		  
+			 
+			  <button class="btn btn-lg btn-primary btn-block" name="valider" value="Valider" type="submit">Se connecter</button>  			
+		</form>			
+	</div>
+</div>
 
 </body>
 </html>

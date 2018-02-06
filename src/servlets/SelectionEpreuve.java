@@ -15,6 +15,8 @@ import beans.Test;
 import beans.Utilisateur;
 import modele.GestionEpreuve;
 import modele.GestionEpreuveImpl;
+import modele.GestionQuestion;
+import modele.GestionQuestionImpl;
 import modele.GestionTest;
 import modele.GestionTestImpl;
 
@@ -52,6 +54,7 @@ public class SelectionEpreuve extends HttpServlet {
 
 		System.out.println("ID du Test sélectionné : " + idTest);
 		session.setAttribute("epreuve", epreuve);
+		session.setAttribute("lesQuestionsEpreuve", lesQuestionsEpreuve);
 		request.setAttribute("test", test);
 		request.setAttribute("questionInt", 1);
 		

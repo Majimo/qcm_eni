@@ -75,7 +75,8 @@ public class QuestionDAOImpl implements QuestionDAO{
 				q.setIdQuestion(idQuestion);
 				q.setEnonce(rs.getString("enonce"));
 				q.setIdTheme(rs.getInt("idTheme"));
-				q.setMedia(rs.getBoolean("media"));
+				System.out.println(rs.getBytes("media") == null || rs.getBytes("media")[0] == 0? false : true);
+				q.setMedia(rs.getBytes("media") == null ? false : true);
 				q.setPoints(rs.getInt("points"));
 			}
 		}

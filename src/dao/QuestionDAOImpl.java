@@ -60,10 +60,32 @@ public class QuestionDAOImpl implements QuestionDAO{
 	@Override
 	public Question getQuestionById(int idQuestion) throws SQLException {
 		Question q = new Question();
+		Connection cnx = AccesBase.getConnection();
+		ResultSet rs = null;
+		PreparedStatement req = null;
+		String sql = "SELECT * FROM QUESTION WHERE idQuestion = ?";
 		
-		//PAS FINI !
+		try{
+			req = cnx.prepareStatement(sql);
+			req.setInt(1, idQuestion);
+			
+			rs = req.executeQuery();
+			
+			if (rs.next()){
+				q.setIdQuestion(idQuestion);
+				q.setEnonce(rs.getString("enonce"));
+				q.setIdTheme(rs.getInt("idTest"));
+				q.setMedia(rs.getBoolean("media"));
+				q.setPoints(rs.getInt("points"));
+			}
+		}
+		finally{
+			if (rs!=null) rs.close();
+			if (req!=null) req.close();
+			if (cnx!=null) cnx.close();
+		}
 		
-		return null;
+		return q;
 	}
 	
 }

@@ -32,7 +32,6 @@ public class ConnexionUtilisateur extends HttpServlet {
 			
 			session.setAttribute( ATT_USER, u );
         	response.sendRedirect(request.getContextPath() + EPREUVE);
-			//this.getServletContext().getRequestDispatcher( EPREUVE ).forward( request, response );
 		} else {
 			System.out.println("Fail !");			
 		}

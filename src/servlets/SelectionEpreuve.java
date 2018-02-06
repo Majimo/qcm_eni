@@ -9,8 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import beans.Epreuve;
 import beans.Test;
 import beans.Utilisateur;
+import modele.GestionEpreuve;
+import modele.GestionEpreuveImpl;
 import modele.GestionTest;
 import modele.GestionTestImpl;
 
@@ -33,16 +36,20 @@ public class SelectionEpreuve extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("T'es dans le POST");
+		HttpSession session = request.getSession();
+		
 		GestionTest gt = GestionTestImpl.getInstance();
-		
 		int idTest = Integer.parseInt(request.getParameter("listeTests"));
-		
-		System.out.println("ID du Test sélectionné : " + idTest);
-		
 		Test test = gt.getTestById(idTest);
 		
+		GestionEpreuve ge = GestionEpreuveImpl.getInstance();
+		Epreuve epreuve = ge.getEpreuveByTest(idTest, ((Utilisateur) session.getAttribute("utilisateur")).getIdUtilisateur());
+		
+
+		System.out.println("ID du Test sélectionné : " + idTest);
+		session.setAttribute("epreuve", epreuve);
 		request.setAttribute("test", test);
+		request.setAttribute("questionInt", 1);
 		
 		this.getServletContext().getRequestDispatcher( TEST ).forward(request, response);
 	}

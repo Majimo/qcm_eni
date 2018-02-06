@@ -33,6 +33,7 @@ public class SelectionEpreuve extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("T'es dans le POST");
 		GestionTest gt = GestionTestImpl.getInstance();
 		
 		int idTest = Integer.parseInt(request.getParameter("listeTests"));

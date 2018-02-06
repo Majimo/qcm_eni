@@ -53,4 +53,42 @@ public class EpreuveDAOImpl implements EpreuveDAO{
 		}
 		return listeEpreuves;
 	}
+
+	@Override
+	public Epreuve getEpreuveByTest(int idTest, int idUtilisateur) throws SQLException {
+		Connection cnx=null;
+		PreparedStatement rqt=null;
+		ResultSet rs=null;
+		String sql = "SELECT * FROM EPREUVE WHERE idTest = ? AND idUtilisateur = ?";
+		
+		Epreuve e = new Epreuve();
+		
+		try{
+			cnx = AccesBase.getConnection();
+			
+			rqt = cnx.prepareStatement(sql);
+			rqt.setInt(1, idTest);
+			rqt.setInt(2, idUtilisateur);
+			rs = rqt.executeQuery();
+			
+			if (rs.next()){
+				e.setIdEpreuve(rs.getInt("idEpreuve"));
+				e.setDateDebutValidite(rs.getDate("dateDebutValidite").getTime());
+				e.setDateFinValidite(rs.getDate("dateFinValidite").getTime());
+				e.setEtat(rs.getString("etat"));
+				e.setIdTest(idTest);
+				e.setIdUtilisateur(idUtilisateur);
+				e.setNiveauObtenu(rs.getString("niveau_obtenu"));
+				e.setNoteObtenue(rs.getFloat("note_obtenue"));
+				e.setTempsEcoule(rs.getInt("tempsEcoule"));
+			}
+		}
+		finally{
+			if (rs!=null) rs.close();
+			if (rqt!=null) rqt.close();
+			if (cnx!=null) cnx.close();
+		}
+		
+		return e;
+	}
 }

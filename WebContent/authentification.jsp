@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div>
-			<input type="submit" class="btn btn-primary" value="Valider" />
+			<input type="submit" class="btn btn-primary" name="ok" value="Valider" />
 		</div>
 	</form>
 

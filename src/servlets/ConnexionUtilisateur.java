@@ -18,8 +18,13 @@ import modele.GestionUtilisateurImpl;
 public class ConnexionUtilisateur extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String ATT_USER = "utilisateur";
+	public static final String CONNEXION = "/authentification.jsp";
 	public static final String EPREUVE = "/selectionEpreuve";
-
+	
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {		
+		this.getServletContext().getRequestDispatcher( CONNEXION ).forward( request, response );
+	}
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		GestionUtilisateur gu = GestionUtilisateurImpl.getInstance();

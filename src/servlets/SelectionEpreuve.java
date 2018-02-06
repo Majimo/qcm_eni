@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import beans.Epreuve;
+import beans.QuestionEpreuve;
 import beans.Test;
 import beans.Utilisateur;
 import modele.GestionEpreuve;
@@ -44,6 +45,9 @@ public class SelectionEpreuve extends HttpServlet {
 		
 		GestionEpreuve ge = GestionEpreuveImpl.getInstance();
 		Epreuve epreuve = ge.getEpreuveByTest(idTest, ((Utilisateur) session.getAttribute("utilisateur")).getIdUtilisateur());
+		
+		GestionQuestion gq = GestionQuestionImpl.getInstance();		
+		List<QuestionEpreuve> lesQuestionsEpreuve = gq.listeQuestions(epreuve.getIdEpreuve());
 		
 
 		System.out.println("ID du Test sélectionné : " + idTest);

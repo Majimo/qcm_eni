@@ -26,7 +26,7 @@ public class TestDAOImpl implements TestDAO {
 		Test test = null;
 		try{
 			cnx=AccesBase.getConnection();
-			rqt=cnx.prepareStatement("SELECT idTest, libelle, description, duree, seuil_haut, seuil_bas"
+			rqt=cnx.prepareStatement("SELECT idTest, libelle, description, duree, seuil_haut, seuil_bas "
 					               + "FROM TEST WHERE idTest = ?");
 			rqt.setInt(1, idTest);
 			rs=rqt.executeQuery();

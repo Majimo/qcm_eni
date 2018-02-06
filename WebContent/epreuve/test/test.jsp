@@ -20,24 +20,16 @@
 
 	<hr id="trait3" style="border: 1px solid grey; width: 47rem;">
 	<form name="qcm1" id="qcm1" style="margin-left: 28rem;">
-		<c:forEach items="${ requestScope.listeQuestions }" var="question">
 			<div id="question" style="margin-bottom: 29px;">
 				<b>${ question.enonce }</b> <br />
 			</div>
-		</c:forEach>
 		<div id="propositions">
 			<b>Propositions :</b>
 		</div>
 		<c:forEach items="${ requestScope.listePropositions }"
 			var="proposition">
 			<div id="reponses">
-				<br /> <input type=checkbox name="choix1"
-					value="${ proposition.idProposition }">${ proposition.enonce }
-				<br /> <input type=checkbox name="choix2"
-					value="${ proposition.idProposition }">${ proposition.enonce }
-				<br /> <input type=checkbox name="choix3"
-					value="${ proposition.idProposition }">${ proposition.enonce }
-				<br /> <input type=checkbox name="choix4"
+				<br /> <input type=checkbox name="choix${ proposition.idProposition }"
 					value="${ proposition.idProposition }">${ proposition.enonce }
 				<br />
 			</div>

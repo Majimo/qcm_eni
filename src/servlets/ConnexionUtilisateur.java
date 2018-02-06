@@ -38,7 +38,7 @@ public class ConnexionUtilisateur extends HttpServlet {
 			session.setAttribute( ATT_USER, u );
         	response.sendRedirect(request.getContextPath() + EPREUVE);
 		} else {
-			System.out.println("Fail !");			
+			System.out.println("Vous n'êtes pas enregistré dans la base... Perdu ;)");			
 		}
 		
 	}

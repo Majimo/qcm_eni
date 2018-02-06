@@ -8,9 +8,9 @@ import beans.Proposition;
 
 public class GestionPropositionImpl implements GestionProposition {
 	
-	private GestionProposition instance = null;
+	private static GestionProposition instance = null;
 	
-	public GestionProposition getInstance(){
+	public static GestionProposition getInstance(){
 		if (instance == null){
 			instance = new GestionPropositionImpl();
 		}

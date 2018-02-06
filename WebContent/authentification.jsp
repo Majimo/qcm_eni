@@ -12,6 +12,8 @@
 <title>Authentification</title>
 </head>
 <body>	
+
+<a href="#"><img alt="Eni" src="images/EniEcole.png"></a>
   	
 	<!-- FORMULAIRE D'AUTHENTIFICATION -->
 	<div class = "container">
@@ -29,4 +31,7 @@
 </div>
 
 </body>
+<footer>
+<p class="text-center"> Copyright2018 © Create by Pierre - Félix - Jérome & Claire. All right reserved. </p>
+</footer>
 </html>

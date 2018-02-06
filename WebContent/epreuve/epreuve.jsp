@@ -15,6 +15,8 @@
 </head>
 <body style="font-family: 'Raleway', sans-serif;">
 
+<a href="#"><img alt="Eni" src="images/EniEcole.png"></a>
+
 	<div class="grand-container">
 		<div class="form-group col-md-6">
 			<h2 style="margin-left: 8rem; margin-top: 2rem;">Epreuve pour ${ sessionScope.utilisateur.nom }
@@ -37,11 +39,14 @@
 				</div>
 				<div>
 					<input type="submit" class="btn btn-primary" name="qcm"
-						value="Lancer le QCM" style="margin-left: 27rem;" />
+						value="Lancer le QCM" style="margin-left: 18rem; margin-top: 45px;" />
 				</div>
 			</form>
 		</div>
 	</div>
 
 </body>
+<footer>
+<p class="text-center"> Copyright2018 © Create by Pierre - Félix - Jérome & Claire. All right reserved. </p>
+</footer>
 </html>

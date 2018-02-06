@@ -27,7 +27,7 @@ public class EpreuveDAOImpl implements EpreuveDAO{
 		ArrayList<Epreuve> listeEpreuves = new ArrayList<Epreuve>();
 		try{
 			cnx=AccesBase.getConnection();
-			rqt=cnx.prepareStatement("SELECT idEpreuve, dateDedutValidite, dateFinValidite, tempsEcoule, etat, note_obtenue, niveau_obtenu, idTest, idUtilisateur " +
+			rqt=cnx.prepareStatement("SELECT idEpreuve, dateDebutValidite, dateFinValidite, tempsEcoule, etat, note_obtenue, niveau_obtenu, idTest, idUtilisateur " +
 									 "FROM EPREUVE WHERE idUtilisateur = ?");		
 			rqt.setInt(1, idUtilisateur);
 			rs=rqt.executeQuery();

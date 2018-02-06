@@ -56,7 +56,7 @@ public class SelectionEpreuve extends HttpServlet {
 		session.setAttribute("epreuve", epreuve);
 		session.setAttribute("lesQuestionsEpreuve", lesQuestionsEpreuve);
 		request.setAttribute("test", test);
-		request.setAttribute("questionInt", 1);
+		session.setAttribute("questionInt", 1);
 		
 		this.getServletContext().getRequestDispatcher( TEST ).forward(request, response);
 	}

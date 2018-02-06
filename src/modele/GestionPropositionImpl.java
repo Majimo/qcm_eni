@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.Proposition;
+import dao.PropositionDAO;
+import dao.PropositionDAOImpl;
 
 public class GestionPropositionImpl implements GestionProposition {
 	

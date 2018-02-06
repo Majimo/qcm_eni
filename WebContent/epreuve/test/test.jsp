@@ -41,4 +41,7 @@
 	</form>
 
 </body>
+<footer>
+<p class="text-center"> Copyright2018 © Create by Pierre - Félix - Jérome & Claire. All right reserved. </p>
+</footer>
 </html>

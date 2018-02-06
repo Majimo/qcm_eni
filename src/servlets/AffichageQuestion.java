@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 import beans.Proposition;
 import beans.Question;
 import beans.QuestionEpreuve;
+import modele.GestionProposition;
+import modele.GestionPropositionImpl;
 import modele.GestionQuestion;
 import modele.GestionQuestionImpl;
 

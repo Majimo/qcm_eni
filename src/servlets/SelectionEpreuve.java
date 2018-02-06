@@ -11,7 +11,8 @@ import javax.servlet.http.HttpSession;
 
 import beans.Test;
 import beans.Utilisateur;
-import modele.GestionEpreuve;
+import modele.GestionTest;
+import modele.GestionTestImpl;
 
 public class SelectionEpreuve extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -31,9 +32,9 @@ public class SelectionEpreuve extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int idTest = Integer.parseInt(request.getParameter("listeTests"));
+		// int idTest = Integer.parseInt(request.getParameter("listeTests"));
 		
-		System.out.println("ID du Test sélectionné : " + idTest);
+		System.out.println("Coucou !!!");
 	}
 
 }

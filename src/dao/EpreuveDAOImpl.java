@@ -5,7 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 
 import beans.Epreuve;
 
@@ -36,8 +35,8 @@ public class EpreuveDAOImpl implements EpreuveDAO{
 			while (rs.next()){
 				epreuve = new Epreuve(
 									rs.getInt("idEpreuve"),
-									rs.getDate("dateDedutValidite"),
-									rs.getDate("dateFinValidite"),
+									rs.getDate("dateDedutValidite").getTime(),
+									rs.getDate("dateFinValidite").getTime(),
 									rs.getInt("tempsEcoule"),
 									rs.getString("etat"),
 									rs.getFloat("noteObtenue"),

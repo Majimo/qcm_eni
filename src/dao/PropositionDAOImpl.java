@@ -35,7 +35,7 @@ public class PropositionDAOImpl implements PropositionDAO{
 			Proposition proposition;
 			while (rs.next()){
 				proposition = new Proposition(
-									rs.getInt("idPropostion"),
+									rs.getInt("idProposition"),
 									rs.getString("enonce"),
 									rs.getBoolean("estBonne"),
 									rs.getInt("idQuestion")

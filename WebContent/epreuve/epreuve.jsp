@@ -35,12 +35,11 @@
 						</c:forEach>
 					</select>
 				</div>
+				<div>
+					<input type="submit" class="btn btn-primary" name="qcm"
+						value="Lancer le QCM" style="margin-left: 27rem;" />
+				</div>
 			</form>
-		</div>
-
-		<div>
-			<input type="submit" class="btn btn-primary" name="qcm" value="Lancer le QCM"
-				style="margin-left: 27rem;" />
 		</div>
 	</div>
 

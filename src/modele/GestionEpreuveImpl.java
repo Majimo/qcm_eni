@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import beans.Epreuve;
-import beans.Test;
 import dao.EpreuveDAO;
 import dao.EpreuveDAOImpl;
 
@@ -31,5 +30,20 @@ public class GestionEpreuveImpl implements GestionEpreuve {
 		}
 		
 		return lesEpreuves;
+	}
+
+	@Override
+	public Epreuve getEpreuveByTest(int idTest, int idUtilisateur) {
+		Epreuve ep = new Epreuve();
+		EpreuveDAO edao = EpreuveDAOImpl.getInstance();
+		
+		try{
+			ep = edao.getEpreuveByTest(idTest, idUtilisateur);
+		}
+		catch(SQLException e){
+			e.printStackTrace();
+		}
+		
+		return ep;
 	}
 }

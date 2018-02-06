@@ -35,7 +35,7 @@ public class EpreuveDAOImpl implements EpreuveDAO{
 			while (rs.next()){
 				epreuve = new Epreuve(
 									rs.getInt("idEpreuve"),
-									rs.getDate("dateDedutValidite").getTime(),
+									rs.getDate("dateDebutValidite").getTime(),
 									rs.getDate("dateFinValidite").getTime(),
 									rs.getInt("tempsEcoule"),
 									rs.getString("etat"),

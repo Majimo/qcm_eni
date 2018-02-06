@@ -17,6 +17,7 @@ import modele.GestionTestImpl;
 public class SelectionEpreuve extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String EPREUVE = "/epreuve/epreuve.jsp";
+	public static final String TEST = "/question";
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		GestionTest gt = GestionTestImpl.getInstance();
@@ -32,9 +33,17 @@ public class SelectionEpreuve extends HttpServlet {
 
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// int idTest = Integer.parseInt(request.getParameter("listeTests"));
+		GestionTest gt = GestionTestImpl.getInstance();
 		
-		System.out.println("Coucou !!!");
+		int idTest = Integer.parseInt(request.getParameter("listeTests"));
+		
+		System.out.println("ID du Test sélectionné : " + idTest);
+		
+		Test test = gt.getTestById(idTest);
+		
+		request.setAttribute("test", test);
+		
+		this.getServletContext().getRequestDispatcher( TEST ).forward(request, response);
 	}
 
 }

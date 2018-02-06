@@ -19,7 +19,7 @@ import modele.GestionQuestionImpl;
 
 public class AffichageQuestion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	public static final String TEST = "/test.jsp";
+	public static final String TEST = "/epreuve/test/test.jsp";
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class AffichageQuestion extends HttpServlet {
 		
 		@SuppressWarnings("unchecked")
 		List<QuestionEpreuve> lesQuestionsEpreuve = (List<QuestionEpreuve>) session.getAttribute("lesQuestionsEpreuve");
-		Question question = gq.getQuestionById(lesQuestionsEpreuve.get((int) request.getAttribute("questionInt")).getIdQuestion());
+		Question question = gq.getQuestionById(lesQuestionsEpreuve.get((int) session.getAttribute("questionInt")).getIdQuestion());
 		
 		GestionProposition gp = GestionPropositionImpl.getInstance();
 		List<Proposition> lesPropositions = gp.listePropositions(question.getIdQuestion());
@@ -42,7 +42,15 @@ public class AffichageQuestion extends HttpServlet {
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
+		GestionQuestion gq = GestionQuestionImpl.getInstance();
+		
+		HttpSession session = request.getSession();
+		
+		@SuppressWarnings("unchecked")
+		List<QuestionEpreuve> lesQuestionsEpreuve = (List<QuestionEpreuve>) session.getAttribute("lesQuestionsEpreuve");
+		Question question = gq.getQuestionById(lesQuestionsEpreuve.get((int) session.getAttribute("questionInt")).getIdQuestion());
+		
+		
 	}
 
 }
